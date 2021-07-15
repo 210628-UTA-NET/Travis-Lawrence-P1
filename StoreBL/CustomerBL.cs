@@ -13,12 +13,12 @@ namespace StoreBL
 
         public Customer AddData(Customer p_entry)
         {
-            return _repo.AddData(p_entry);
+            return _repo.AddCustomer(p_entry);
         }
 
         public List<Customer> GetAllData()
         {
-            return _repo.GetAllData();
+            return _repo.GetAllCustomers();
         }
 
         public List<Customer> NameSearch(string p_name){

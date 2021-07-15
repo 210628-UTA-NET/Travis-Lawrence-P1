@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace StoreModels
 {
-
-    //To do: regex phone number for proper format
     public class Customer{
 
         public Customer()
@@ -22,13 +20,12 @@ namespace StoreModels
             PhoneNumber = p_phone;
         }
 
-        public int CustomerID{get; set;}
+        public int CustomerId{get; set;}
         public string Name{get; set;}
         public string Address{get; set;}
         public string Email{get; set;}
         public long PhoneNumber{get; set;}
-
-        public List<Orders> Orders{get; set;}
+        public List<Order> Orders{get; set;}
 
         public override string ToString()
         {

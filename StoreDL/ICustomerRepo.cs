@@ -4,15 +4,26 @@ using System.Collections.Generic;
 namespace StoreDL
 {   
     /// <summary>
-    /// Handles data logic for customer database
+    /// Handles Customer data logic for the database
     /// </summary>
-    public interface ICustomerRepo : IRepo<Customer>
+    public interface ICustomerRepo
     {
         /// <summary>
-        /// Searches database for customers with matching names
+        /// Adds a new Customer to the database
+        /// </summary>
+        /// <param name="p_cust">The Customer to be added</param>
+        /// <returns>Returns the added Customer</returns>
+        Customer AddCustomer(Customer p_cust);
+        /// <summary>
+        /// Retrieves all Customers from the database
+        /// </summary>
+        /// <returns>Returns a list of the Customers</returns>
+        List<Customer> GetAllCustomers();
+        /// <summary>
+        /// Searches database for Customers with matching names
         /// </summary>
         /// <param name="p_name">The name being seached for</param>
-        /// <returns>Returns any customers who have the desired name</returns>
-        public List<Customer> NameSearch(string p_name);
+        /// <returns>Returns any Customers who have the desired name</returns>
+        List<Customer> NameSearch(string p_name);
     }
 }

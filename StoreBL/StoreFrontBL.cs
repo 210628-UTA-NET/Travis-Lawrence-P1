@@ -6,18 +6,18 @@ namespace StoreBL
 {
     public class StoreFrontBL : IStoreFrontBL
     {
-        private IStoreFrontRepo _storeFrontRepo;
+        private ILocationRepo _storeFrontRepo;
         
-        public StoreFrontBL(IStoreFrontRepo p_storeFrontRepo){
+        public StoreFrontBL(ILocationRepo p_storeFrontRepo){
             _storeFrontRepo = p_storeFrontRepo;
         }
 
-        public List<StoreFront> NameSearch(string p_name)
+        public List<Location> NameSearch(string p_name)
         {
             return _storeFrontRepo.NameSearch(p_name);
         }
 
-        public bool Update(StoreFront p_store)
+        public bool Update(Location p_store)
         {
             try
             {
