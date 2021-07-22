@@ -32,6 +32,7 @@ jobs:
         sonarProjectKey: 210628-uta-net
         # The name of the SonarQube project
         sonarProjectName: Travis-Lawrence-P1
+        sonarOrganization: 210628-uta-net
         dotnetBuildArguments: /Travis-Lawrence-P1/
         # Optional command arguments to 'dotnet test'
         dotnetTestArguments: /Travis-Lawrence-P1 --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
@@ -39,3 +40,4 @@ jobs:
         sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
