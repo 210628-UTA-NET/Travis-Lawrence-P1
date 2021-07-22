@@ -29,13 +29,13 @@ jobs:
       uses: highbyte/sonarscan-dotnet@v2.1.1-beta
       with:
         # The key of the SonarQube project
-        sonarProjectKey: 210628-uta-net
+        sonarProjectKey: 210628-uta-net_Travis-Lawrence-P1
         # The name of the SonarQube project
         sonarProjectName: Travis-Lawrence-P1
         sonarOrganization: 210628-uta-net
-        dotnetBuildArguments: Travis-Lawrence-P1
+        dotnetBuildArguments: Travis-Lawrence-P1/
         # Optional command arguments to 'dotnet test'
-        dotnetTestArguments: Travis-Lawrence-P1 --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+        dotnetTestArguments: Travis-Lawrence-P1/ --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         # Optional extra command arguments the the SonarScanner 'begin' command
         sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
       env:
