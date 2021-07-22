@@ -29,7 +29,7 @@ jobs:
       uses: highbyte/sonarscan-dotnet@v2.1.1-beta
       with:
         # The key of the SonarQube project
-        sonarProjectKey: 210628-uta-net_Travis-Lawrence-P1
+        sonarProjectKey: 210628-UTA-NET_Travis-Lawrence-P1
         # The name of the SonarQube project
         sonarProjectName: Travis-Lawrence-P1
         sonarOrganization: 210628-uta-net
