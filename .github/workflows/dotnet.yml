@@ -33,7 +33,7 @@ jobs:
         # The name of the SonarQube project
         sonarProjectName: Travis-Lawrence-P1
         sonarOrganization: 210628-uta-net
-        dotnetBuildArguments: Travis-Lawrence-P1/
+        dotnetBuildArguments: Travis-Lawrence-P1
         # Optional command arguments to 'dotnet test'
         dotnetTestArguments: Travis-Lawrence-P1 --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
         # Optional extra command arguments the the SonarScanner 'begin' command
