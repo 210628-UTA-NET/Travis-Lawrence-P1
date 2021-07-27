@@ -18,13 +18,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore 
     - name: Build
       run: dotnet --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: publish
-      run: dotnet publish Travis-Lawrence-P1/ --configuration Release -o ./publish
+      run: dotnet publish --configuration Release -o ./publish
     - name: deploy
       uses: azure/webapps-deploy@v2
       with: 
