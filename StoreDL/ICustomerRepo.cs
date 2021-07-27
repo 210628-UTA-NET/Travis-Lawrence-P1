@@ -25,5 +25,12 @@ namespace StoreDL
         /// <param name="p_name">The name being seached for</param>
         /// <returns>Returns any Customers who have the desired name</returns>
         List<Customer> NameSearch(string p_name);
+        /// <summary>
+        /// Updates a customer in the database
+        /// </summary>
+        /// <param name="p_cust">The customre to be updated, including its changes</param>
+        /// <returns>Returns the updated customer</returns>
+        Customer Update(Customer p_cust);
+        Customer GetById(int p_id);
     }
 }

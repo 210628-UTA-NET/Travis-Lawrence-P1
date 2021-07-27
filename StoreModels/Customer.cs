@@ -11,6 +11,7 @@ namespace StoreModels
             Address = "";
             Email = "";
             PhoneNumber = 0;
+            Orders = new List<Order>();
         }
 
         public Customer(string p_name, string p_address, string p_email, long p_phone){
@@ -18,6 +19,7 @@ namespace StoreModels
             Address = p_address;
             Email = p_email;
             PhoneNumber = p_phone;
+            Orders = new List<Order>();
         }
 
         public int CustomerId{get; set;}

@@ -7,13 +7,13 @@ namespace StoreModels
 
         public Order(){
             Price = 0;
-            Location = new Location();
+            Location = "";
             OrderItems = new List<LineItem>();
         }
 
         public int OrderId{get; set;}
         public List<LineItem> OrderItems{get; set;}
-        public Location Location{get; set;}
+        public string Location{get; set;}
         public double Price{get; set;}
 
         public override string ToString()

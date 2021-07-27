@@ -24,5 +24,13 @@ namespace StoreDL
         /// <param name="p_store">The Location that should be updated</param>
         /// <returns>Returns the entered Location</returns>
         Location Update(Location p_store);
+        /// <summary>
+        /// Gets a location's current inventory
+        /// </summary>
+        /// <param name="p_locationId">The id of the store</param>
+        /// <returns>Returns the inventory in list form</returns>
+        List<LineItem> GetInventory(int p_locationId);
+        Product GetProduct(int p_id);
+        Location GetById(int p_id);
     }
 }

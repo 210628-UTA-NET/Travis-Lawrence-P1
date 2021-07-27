@@ -6,7 +6,6 @@ namespace StoreModels
 
         public LineItem(){
             Quantity = 0;
-            Product = new Product();
         }
         public LineItem(int p_quan, Product p_prod){
             Quantity = p_quan;
@@ -16,6 +15,7 @@ namespace StoreModels
         public int LineItemId{get; set;}
         public int Quantity{get; set;}
         public Product Product{get; set;}
+        public int? LocationId{get; set;}
 
         public override string ToString()
         {

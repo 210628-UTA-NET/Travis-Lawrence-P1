@@ -1,0 +1,43 @@
+﻿@model IEnumerable<StoreWebUI.Models.LocationVM>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Store Search</h1>
+
+    <div class="mb-3">
+        <form asp-action="Search" method="get">
+            <label class="form-label">Enter the store name</label>
+            <input type="text" class="form-control" name="p_name">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </form>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var store in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(mL => store.LocationId)</td>
+                        <td>@Html.DisplayFor(mL => store.Name)</td>
+                        <td>@Html.DisplayFor(mL => store.Address)</td>
+                        <td>@Html.ActionLink("View Inventory", "SeeInventory", new { p_locationId = store.LocationId }, new { @style = "color:white;", @class = "btn btn-primary" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

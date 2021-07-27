@@ -1,0 +1,45 @@
+﻿@model IEnumerable<StoreWebUI.Models.CustomerVM>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Customer Search</h1>
+
+    <div class="mb-3">
+        <form asp-action="Search" method="get">
+            <label class="form-label">Enter the customer's name</label>
+            <input type="text" class="form-control" name="p_name">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </form>
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cust in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelCust => cust.Id)</td>
+                        <td>@Html.DisplayFor(mC => cust.Name)</td>
+                        <td>@Html.DisplayFor(mC => cust.Address)</td>
+                        <td>@Html.DisplayFor(mC => cust.Email)</td>
+                        <td>@Html.DisplayFor(mC => cust.PhoneNumber)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

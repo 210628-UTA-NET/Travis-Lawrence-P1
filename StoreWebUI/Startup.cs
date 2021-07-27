@@ -31,6 +31,8 @@ namespace StoreWebUI
             services.AddDbContext<StoreDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SilverDatabase")));
             services.AddScoped<ICustomerRepo, CustomerRepo>();
             services.AddScoped<ICustomerBL, CustomerBL>();
+            services.AddScoped<ILocationRepo, LocationRepo>();
+            services.AddScoped<ILocationBL, LocationBL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

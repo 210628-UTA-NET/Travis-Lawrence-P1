@@ -6,7 +6,7 @@ namespace StoreBL
     /// <summary>
     /// Handles the business logic for StoreFronts
     /// </summary>
-    public interface IStoreFrontBL{
+    public interface ILocationBL{
         /// <summary>
         /// Searches for all StoreFronts by a given name
         /// </summary>
@@ -19,5 +19,18 @@ namespace StoreBL
         /// <param name="p_store">The StoreFront with modified data</param>
         /// <returns>Returns a boolean indicating whether the update was successful</returns>
         bool Update(Location p_store);
+        /// <summary>
+        /// Returns all Locations in the database
+        /// </summary>
+        /// <returns>Returns a list of the locations</returns>
+        List<Location> GetAllLocations();
+        /// <summary>
+        /// Returns a store's current inventory
+        /// </summary>
+        /// <param name="p_locationId">The Id of the store</param>
+        /// <returns>Returns the inventory in list form</returns>
+        List<LineItem> GetInventory(int p_locationId);
+        Product GetProduct(int p_id);
+        Location GetById(int p_id);
     }
 }

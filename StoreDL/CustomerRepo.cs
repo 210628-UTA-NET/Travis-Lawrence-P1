@@ -27,5 +27,17 @@ namespace StoreDL
         {
             return GetAllCustomers().Where(c => c.Name == p_name).ToList();
         }
+
+        public Customer Update(Customer p_cust)
+        {
+            _context.Customers.Update(p_cust);
+            _context.SaveChanges();
+            return p_cust;
+        }
+
+        public Customer GetById(int p_id)
+        {
+            return _context.Customers.Find(p_id);
+        }
     }
 }

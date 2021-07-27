@@ -1,0 +1,34 @@
+﻿@model IEnumerable<StoreWebUI.Models.LineItemVM>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <table class="table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(mI => item.Name)</td>
+                    <td>@Html.DisplayFor(mI => item.Desc)</td>
+                    <td>@Html.DisplayFor(mI => item.Category)</td>
+                    <td>@Html.DisplayFor(mI => item.Price)</td>
+                    <td>@Html.DisplayFor(mI => item.Quantity)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
