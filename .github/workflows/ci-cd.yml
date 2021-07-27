@@ -18,13 +18,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore StoreWebUI/
+      run: dotnet restore
     - name: Build
-      run: dotnet build StoreWebUI/ --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test StoreWebUI/ --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
     - name: publish
-      run: dotnet publish StoreWebUI/ --configuration Release -o ./publish
+      run: dotnet publish --configuration Release -o ./publish
     - name: deploy
       uses: azure/webapps-deploy@v2
       with: 
