@@ -95,6 +95,7 @@ namespace StoreWebUI.Controllers
             loc.Orders.Add(ord);
             _custBL.Update(cust);
             _locationBL.Update(loc);
+            _cart = new List<LineItemVM>();
             return View();
         }
     }
