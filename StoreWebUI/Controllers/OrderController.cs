@@ -68,6 +68,7 @@ namespace StoreWebUI.Controllers
         public IActionResult ConfirmOrder(int p_id, int storeId)
         {
             Order ord = new Order();
+            List<LineItem> inv = _locationBL.GetInventory(p_id);
             foreach(LineItemVM item in _cart)
             {
                 ord.OrderItems.Add(
@@ -78,10 +79,18 @@ namespace StoreWebUI.Controllers
                         LocationId = null
                     }
                 );
+                foreach (LineItem line in inv)
+                {
+                    if (line.Product.ProductId == item.ProductId)
+                    {
+                        line.Quantity -= item.Quantity;
+                    }
+                }
                 ord.Price += item.Quantity * item.Price;
             }
             Location loc = _locationBL.GetById(storeId);
             Customer cust = _custBL.GetById(p_id);
+            loc.Inventory = inv;
             cust.Orders.Add(ord);
             loc.Orders.Add(ord);
             _custBL.Update(cust);
