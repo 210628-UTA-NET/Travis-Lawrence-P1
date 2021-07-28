@@ -39,5 +39,10 @@ namespace StoreDL
         {
             return _context.Customers.Find(p_id);
         }
+
+        public List<Order> GetOrders(int p_id)
+        {
+            return _context.Customers.Find(p_id).Orders;
+        }
     }
 }

@@ -32,5 +32,6 @@ namespace StoreDL
         /// <returns>Returns the updated customer</returns>
         Customer Update(Customer p_cust);
         Customer GetById(int p_id);
+        List<Order> GetOrders(int p_id);
     }
 }

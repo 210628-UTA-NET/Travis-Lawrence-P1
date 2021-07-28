@@ -32,5 +32,6 @@ namespace StoreDL
         List<LineItem> GetInventory(int p_locationId);
         Product GetProduct(int p_id);
         Location GetById(int p_id);
+        List<Order> GetOrders(int p_id);
     }
 }
