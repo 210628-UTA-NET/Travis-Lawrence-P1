@@ -22,5 +22,5 @@ This application is designed with functionality that would make virtual shopping
 - Place an order
 
 To-do list:
-- Allow managers to replensih store inventory
+- Allow managers to replenish store inventory
 - Allow users to view order history
